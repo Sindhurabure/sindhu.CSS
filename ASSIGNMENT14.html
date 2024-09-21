@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Animations Demo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+
+        h1 {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .container {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            margin-top: 50px;
+        }
+
+        /* Animation 1: Move and change background color */
+        @keyframes moveAndChangeColor {
+            0% {
+                transform: translateX(0);
+                background-color: lightblue;
+            }
+            50% {
+                transform: translateX(200px);
+                background-color: lightcoral;
+            }
+            100% {
+                transform: translateX(0);
+                background-color: lightblue;
+            }
+        }
+
+        .box1 {
+            width: 100px;
+            height: 100px;
+            background-color: lightblue;
+            animation: moveAndChangeColor 3s ease-in-out infinite;
+        }
+
+        /* Animation 2: Scale and rotate */
+        @keyframes scaleAndRotate {
+            0% {
+                transform: scale(1) rotate(0deg);
+            }
+            50% {
+                transform: scale(1.5) rotate(180deg);
+            }
+            100% {
+                transform: scale(1) rotate(360deg);
+            }
+        }
+
+        .box2 {
+            width: 100px;
+            height: 100px;
+            background-color: lightgreen;
+            animation: scaleAndRotate 4s linear infinite;
+        }
+
+        /* Animation 3: Fade in and out with delay */
+        @keyframes fadeInOut {
+            0%, 100% {
+                opacity: 0;
+            }
+            50% {
+                opacity: 1;
+            }
+        }
+
+        .box3 {
+            width: 100px;
+            height: 100px;
+            background-color: salmon;
+            animation: fadeInOut 3s ease-in-out 1s infinite;
+        }
+
+        /* Animation 4: Slide and change color with limited animation count */
+        @keyframes slideAndChangeColor {
+            0% {
+                transform: translateY(0);
+                background-color: yellow;
+            }
+            100% {
+                transform: translateY(200px);
+                background-color: orange;
+            }
+        }
+
+        .box4 {
+            width: 100px;
+            height: 100px;
+            background-color: yellow;
+            animation: slideAndChangeColor 2s cubic-bezier(0.42, 0, 0.58, 1) 2s 3;
+        }
+
+    </style>
+</head>
+<body>
+
+    <h1>CSS Animations Demonstration</h1>
+
+    <div class="container">
+        <!-- Box with move and background color change animation -->
+        <div class="box1">Move</div>
+
+        <!-- Box with scale and rotate animation -->
+        <div class="box2">Scale</div>
+
+        <!-- Box with fade in/out animation with delay -->
+        <div class="box3">Fade</div>
+
+        <!-- Box with slide and color change animation with limited iterations -->
+        <div class="box4">Slide</div>
+    </div>
+
+</body>
+</html>

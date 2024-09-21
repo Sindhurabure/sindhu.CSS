@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Transitions Demo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+
+        h1 {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .container {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            margin-top: 50px;
+        }
+
+        /* Transition for background-color */
+        .box1 {
+            width: 100px;
+            height: 100px;
+            background-color: lightblue;
+            transition: background-color 1s ease;
+        }
+
+        .box1:hover {
+            background-color: cornflowerblue;
+        }
+
+        /* Transition for width and height */
+        .box2 {
+            width: 100px;
+            height: 100px;
+            background-color: lightgreen;
+            transition: width 2s ease-in-out, height 2s ease-in-out;
+        }
+
+        .box2:hover {
+            width: 200px;
+            height: 200px;
+        }
+
+        /* Transition for color and background-color with delay */
+        .box3 {
+            width: 150px;
+            height: 100px;
+            color: white;
+            background-color: salmon;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: color 0.5s linear 0.2s, background-color 0.5s linear 0.2s;
+        }
+
+        .box3:hover {
+            color: black;
+            background-color: darkorange;
+        }
+
+        /* Transition with cubic-bezier timing function */
+        .box4 {
+            width: 100px;
+            height: 100px;
+            background-color: lightcoral;
+            transition: transform 2s cubic-bezier(0.42, 0, 0.58, 1); /* Custom timing function */
+        }
+
+        .box4:hover {
+            transform: rotate(360deg);
+        }
+    </style>
+</head>
+<body>
+
+    <h1>CSS Transitions Demonstration</h1>
+
+    <div class="container">
+        <!-- Box with background-color transition -->
+        <div class="box1">Hover me!</div>
+
+        <!-- Box with width and height transition -->
+        <div class="box2">Hover me!</div>
+
+        <!-- Box with color and background-color transition + delay -->
+        <div class="box3">Hover me!</div>
+
+        <!-- Box with cubic-bezier timing function and transform transition -->
+        <div class="box4">Hover me!</div>
+    </div>
+
+</body>
+</html>

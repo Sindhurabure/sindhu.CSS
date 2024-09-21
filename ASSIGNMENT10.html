@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Images Example</title>
+  <style>
+  /* Base styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header, footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 1em 0;
+}
+
+main.content {
+    padding: 1em;
+    text-align: center;
+}
+
+h1, h2 {
+    font-size: 2em;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    border-radius: 10px;
+}
+
+/* Tablet view (min-width: 600px) */
+@media screen and (min-width: 600px) {
+    h1 {
+        font-size: 2.5em;
+    }
+
+    h2 {
+        font-size: 2em;
+    }
+
+    img {
+        max-width: 80%;
+    }
+}
+
+/* Desktop view (min-width: 1024px) */
+@media screen and (min-width: 1024px) {
+    h1 {
+        font-size: 3em;
+    }
+
+    img {
+        max-width: 60%;
+    }
+}
+
+/* Large Desktop view (min-width: 1440px) */
+@media screen and (min-width: 1440px) {
+    img {
+        max-width: 50%;
+    }
+}  
+  </style>  
+</head>
+<body>
+
+    <header>
+        <h1>Responsive Images with Srcset</h1>
+    </header>
+
+    <main class="content">
+        <section class="image-section">
+            <h2>Beautiful Landscape</h2>
+            <img 
+                src="images/landscape-small.jpg" 
+                srcset="images/landscape-small.jpg 600w,
+                        images/landscape-medium.jpg 900w,
+                        images/landscape-large.jpg 1200w,
+                        images/landscape-extra-large.jpg 1600w"
+                sizes="(max-width: 600px) 100vw,
+                       (max-width: 900px) 50vw,
+                       (max-width: 1200px) 33vw,
+                       25vw"
+                alt="Beautiful landscape with mountains and a lake">
+        </section>
+    </main>
+
+    <footer>
+        <p>Footer Information</p>
+    </footer>
+
+</body>
+</html>

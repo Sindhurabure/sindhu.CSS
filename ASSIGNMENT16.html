@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Pseudo-Classes and Pseudo-Elements Demo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+
+        h1 {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .container {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            flex-wrap: wrap;
+            margin-top: 50px;
+        }
+
+        /* Style for buttons to demonstrate :hover, :active, and :focus */
+        button {
+            padding: 15px 30px;
+            background-color: lightblue;
+            border: none;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        /* :hover pseudo-class */
+        button:hover {
+            background-color: deepskyblue;
+        }
+
+        /* :active pseudo-class */
+        button:active {
+            background-color: darkblue;
+            color: white;
+        }
+
+        /* :focus pseudo-class */
+        button:focus {
+            outline: none;
+            box-shadow: 0 0 5px 3px rgba(0, 0, 255, 0.5);
+        }
+
+        /* Pseudo-element :before to add content */
+        .box:before {
+            content: 'Before ';
+            color: red;
+            font-weight: bold;
+        }
+
+        /* Pseudo-element :after to add content */
+        .box:after {
+            content: ' After';
+            color: green;
+            font-weight: bold;
+        }
+
+        /* Style for nth-child demonstration */
+        .list-item {
+            padding: 10px;
+            background-color: lightcoral;
+            margin: 5px;
+            color: white;
+        }
+
+        /* Style for :nth-child pseudo-class */
+        .list-item:nth-child(odd) {
+            background-color: lightgreen;
+        }
+
+        /* Style for div to show interaction with :hover and pseudo-elements */
+        .box {
+            width: 150px;
+            height: 150px;
+            background-color: lightgray;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 18px;
+            margin: 20px;
+            position: relative;
+            transition: background-color 0.3s ease;
+        }
+
+        /* :hover pseudo-class to change the background */
+        .box:hover {
+            background-color: lightblue;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>CSS Pseudo-Classes and Pseudo-Elements Demonstration</h1>
+
+    <div class="container">
+        <!-- Button demonstrating :hover, :active, :focus -->
+        <button>Hover / Active / Focus</button>
+
+        <!-- Div demonstrating :before and :after pseudo-elements -->
+        <div class="box">Content</div>
+    </div>
+
+    <h2 style="text-align: center;">List with :nth-child Pseudo-Class</h2>
+
+    <div class="container">
+        <!-- List items demonstrating :nth-child pseudo-class -->
+        <div class="list-item">Item 1</div>
+        <div class="list-item">Item 2</div>
+        <div class="list-item">Item 3</div>
+        <div class="list-item">Item 4</div>
+        <div class="list-item">Item 5</div>
+    </div>
+
+</body>
+</html>

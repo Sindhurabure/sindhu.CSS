@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complex Flexbox Layout</title>
+    <style>
+        /* Parent Flex Container */
+        .parent-container {
+            display: flex;
+            flex-wrap: wrap;
+            align-content: space-around;
+            justify-content: center;
+            height: 100vh;
+            background-color: #f2f2f2;
+        }
+
+        /* Nested Flex Containers */
+        .nested-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            width: 30%;
+            height: 300px;
+            background-color: #d1d1d1;
+            margin: 10px;
+            border-radius: 10px;
+        }
+
+        /* Flex Items inside Nested Container */
+        .nested-container div {
+            background-color: #4CAF50;
+            color: white;
+            padding: 20px;
+            margin: 10px;
+            border-radius: 5px;
+            font-size: 18px;
+        }
+
+        /* Order property for flex items */
+        .order-1 { order: 1; }
+        .order-2 { order: 2; }
+        .order-3 { order: 3; }
+
+        /* Different heights for nested containers */
+        .nested-1 { height: 250px; background-color: #c3c3c3; }
+        .nested-2 { height: 350px; background-color: #a1a1a1; }
+        .nested-3 { height: 300px; background-color: #919191; }
+
+    </style>
+</head>
+<body>
+
+    <div class="parent-container">
+        <!-- First Nested Flex Container -->
+        <div class="nested-container nested-1">
+            <div class="order-3">Item 1 (Order 3)</div>
+            <div class="order-2">Item 2 (Order 2)</div>
+            <div class="order-1">Item 3 (Order 1)</div>
+        </div>
+
+        <!-- Second Nested Flex Container -->
+        <div class="nested-container nested-2">
+            <div>Item A</div>
+            <div>Item B</div>

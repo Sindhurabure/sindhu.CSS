@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Styled Form Elements</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="password"],
+        select {
+            padding: 12px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: 100%;
+            font-size: 16px;
+            transition: border-color 0.3s ease;
+        }
+
+        input[type="text"]:focus,
+        input[type="email"]:focus,
+        input[type="password"]:focus,
+        select:focus {
+            border-color: #007BFF;
+            box-shadow: 0 0 8px rgba(0, 123, 255, 0.3);
+            outline: none;
+        }
+
+        input[type="checkbox"],
+        input[type="radio"] {
+            margin-right: 10px;
+            transform: scale(1.2); /* Increases the size for better visibility */
+        }
+
+        .checkbox-group,
+        .radio-group {
+            margin-bottom: 20px;
+        }
+
+        .submit-btn {
+            padding: 12px;
+            background-color: #28a745;
+            color: white;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .submit-btn:hover {
+            background-color: #218838;
+        }
+
+        /* Validation styles */
+        input:invalid {
+            border-color: #dc3545;
+        }
+
+        input:invalid:focus {
+            box-shadow: 0 0 8px rgba(220, 53, 69, 0.3);
+        }
+
+        input:valid:focus {
+            border-color: #28a745;
+            box-shadow: 0 0 8px rgba(40, 167, 69, 0.3);
+        }
+
+        .checkbox-group label,
+        .radio-group label {
+            font-weight: normal;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Styled Form</h1>
+        <form action="#" method="post">
+            <!-- Text input -->
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" placeholder="Enter your name" required>
+
+            <!-- Email input -->
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+            <!-- Password input -->
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" placeholder="Enter your password" required>
+
+            <!-- Checkbox group -->
+            <div class="checkbox-group">
+                <label>Hobbies:</label>
+                <label><input type="checkbox" name="hobby" value="reading">Reading</label>
+                <label><input type="checkbox" name="hobby" value="travelling">Travelling</label>
+                <label><input type="checkbox" name="hobby" value="music">Music</label>
+            </div>
+
+            <!-- Radio button group -->
+            <div class="radio-group

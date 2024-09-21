@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Webpage</title>
+    <style>
+    /* Base styles (Mobile first) */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header, footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 1em 0;
+}
+
+main.content {
+    display: flex;
+    flex-direction: column;
+    padding: 1em;
+}
+
+.main-section, .sidebar {
+    margin: 1em 0;
+}
+
+.main-section {
+    font-size: 16px;
+}
+
+.sidebar {
+    background-color: #f4f4f4;
+    padding: 1em;
+    display: none; /* Hidden on mobile */
+}
+
+/* Tablet view (min-width: 600px) */
+@media screen and (min-width: 600px) {
+    main.content {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .main-section {
+        flex: 2;
+        font-size: 18px; /* Slightly larger font for tablets */
+    }
+
+    .sidebar {
+        flex: 1;
+        display: block; /* Visible on tablet and up */
+    }
+}
+
+/* Desktop view (min-width: 1024px) */
+@media screen and (min-width: 1024px) {
+    main.content {
+        max-width: 1200px;
+        margin: 0 auto;
+        flex-direction: row;
+    }
+
+    .main-section {
+        font-size: 20px; /* Larger font size for desktop */
+    }
+
+    header, footer {
+        padding: 2em 0;
+    }
+}
+
+/* Large Desktop view (min-width: 1440px) */
+@media screen and (min-width: 1440px) {
+    .main-section {
+        font-size: 22px;
+    }
+
+    .sidebar {
+        font-size: 18px;
+    }
+}
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Responsive Webpage</h1>
+    </header>
+    
+    <main class="content">
+        <section class="main-section">
+            <p>This is the main content area.</p>
+        </section>
+        <aside class="sidebar">
+            <p>This is the sidebar content.</p>
+        </aside>
+    </main>
+
+    <footer>
+        <p>Footer Information</p>
+    </footer>
+</body>
+</html>

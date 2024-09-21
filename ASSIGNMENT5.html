@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexbox Layout</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: row; /* Align items in a row */
+            justify-content: space-between; /* Distribute space between items */
+            align-items: center; /* Center items vertically */
+            width: 80%;
+            max-width: 1000px;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .box {
+            flex: 1; /* Grow to fill space */
+            margin: 0 10px;
+            background: #3498db;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .box:nth-child(2) {
+            background: #2ecc71;
+        }
+
+        .box:nth-child(3) {
+            background: #e74c3c;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box">Apple</div>
+        <div class="box">Oranges</div>
+        <div class="box">Grapes</div>
+    </div>
+</body>
+</html>

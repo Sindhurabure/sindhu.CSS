@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Variables Demo</title>
+    <style>
+        /* Defining CSS variables */
+        :root {
+            --primary-color: #3498db;
+            --secondary-color: #2ecc71;
+            --background-color: #f4f4f4;
+            --text-color: #333;
+            --font-size-base: 16px;
+            --heading-font-size: 2rem;
+            --spacing: 10px;
+            --button-padding: 12px 20px;
+            --border-radius: 8px;
+        }
+
+        /* Applying variables throughout the stylesheet */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            font-size: var(--font-size-base);
+            margin: 0;
+            padding: var(--spacing);
+        }
+
+        h1 {
+            font-size: var(--heading-font-size);
+            text-align: center;
+            color: var(--primary-color);
+            margin-bottom: var(--spacing);
+        }
+
+        p {
+            margin-bottom: var(--spacing);
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: var(--spacing);
+            background-color: white;
+            border-radius: var(--border-radius);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn {
+            display: inline-block;
+            padding: var(--button-padding);
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: var(--border-radius);
+            cursor: pointer;
+            font-size: var(--font-size-base);
+            transition: background-color 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: var(--secondary-color);
+        }
+
+        .highlight {
+            background-color: var(--secondary-color);
+            padding: var(--spacing);
+            border-radius: var(--border-radius);
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>CSS Variables Demo</h1>
+
+    <div class="container">
+        <p>This webpage uses <strong>CSS variables</strong> to ensure consistency in styling and ease of maintenance. By defining variables for common properties such as colors, font sizes, and spacing, we can easily update the entire design by simply changing the values in one place.</p>
+
+        <p class="highlight">This paragraph uses a background color defined by the variable <code>--secondary-color</code>, and padding defined by the variable <code>--spacing</code>.</p>
+
+        <button class="btn">Click Me</button>
+    </div>
+
+</body>
+</html>

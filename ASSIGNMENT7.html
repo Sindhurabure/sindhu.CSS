@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple CSS Grid Layout</title>
+    <style>
+        /* Grid Container */
+        .grid-container {
+            display: grid;
+            grid-template-rows: 100px 200px; /* Two rows: first 100px, second 200px */
+            grid-template-columns: 1fr 2fr; /* Two columns: first takes 1 fraction, second takes 2 fractions */
+            grid-gap: 20px; /* 20px gap between rows and columns */
+            height: 100vh;
+            padding: 20px;
+            background-color: #f0f0f0;
+        }
+
+        /* Specific grid area for items */
+        .item1 { grid-area: 1 / 1 / 2 / 2; background-color: #8e44ad; }
+        .item2 { grid-area: 1 / 2 / 2 / 3; background-color: #3498db; }
+        .item3 { grid-area: 2 / 1 / 3 / 3; background-color: #e74c3c; }
+
+        /* Grid item styling */
+        .grid-item {
+            color: white;
+            font-size: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="grid-container">
+        <!-- Grid Items placed in specific areas -->
+        <div class="grid-item item1">Item 1 (Row 1, Col 1)</div>
+        <div class="grid-item item2">Item 2 (Row 1, Col 2)</div>
+        <div class="grid-item item3">Item 3 (Row 2, Span 2 columns)</div>
+    </div>
+
+</body>
+</html>

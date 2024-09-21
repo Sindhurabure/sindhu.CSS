@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Positioning Techniques</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Section container to demonstrate each type of positioning */
+        .section {
+            margin: 20px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            position: relative; /* for better clarity */
+        }
+
+        /* Static positioning */
+        .static-box {
+            width: 200px;
+            height: 100px;
+            background-color: lightblue;
+            position: static; /* Default */
+            z-index: 1;
+        }
+
+        /* Relative positioning */
+        .relative-box {
+            width: 200px;
+            height: 100px;
+            background-color: lightgreen;
+            position: relative;
+            top: 20px;
+            left: 20px;
+            z-index: 2;
+        }
+
+        /* Absolute positioning */
+        .absolute-box {
+            width: 200px;
+            height: 100px;
+            background-color: lightcoral;
+            position: absolute;
+            top: 0;
+            left: 50px;
+            z-index: 3;
+        }
+
+        /* Fixed positioning */
+        .fixed-box {
+            width: 200px;
+            height: 100px;
+            background-color: lightsalmon;
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            z-index: 4;
+        }
+
+        /* Sticky positioning */
+        .sticky-box {
+            width: 200px;
+            height: 100px;
+            background-color: lightyellow;
+            position: -webkit-sticky; /* For Safari */
+            position: sticky;
+            top: 0;
+            z-index: 5;
+        }
+
+        /* Adding some extra content to show scrolling */
+        .content-box {
+            height: 800px;
+            background-color: #f0f0f0;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .z-index-experiment {
+            width: 200px;
+            height: 100px;
+            background-color: lightgray;
+            position: absolute;
+            top: 40px;
+            left: 100px;
+            z-index: 6;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>CSS Positioning Techniques</h1>
+
+    <!-- Static Positioning -->
+    <div class="section">
+        <h2>Static Positioning (Default)</h2>
+        <div class="static-box">Static Box (z-index: 1)</div>
+    </div>
+
+    <!-- Relative Positioning -->
+    <div class="section">
+        <h2>Relative Positioning</h2>
+        <div class="relative-box">Relative Box (z-index: 2)</div>
+    </div>
+
+    <!-- Absolute Positioning -->
+    <div class="section">
+        <h2>Absolute Positioning</h2>
+        <div class="absolute-box">Absolute Box (z-index: 3)</div>
+        <!-- Z-index experiment: this will overlap the absolute-box -->
+        <div class="z-index-experiment">Z-index Overlap (z-index: 6)</div>
+    </div>
+
+    <!-- Fixed Positioning -->
+    <div class="section">
+        <h2>Fixed Positioning</h2>
+        <div class="fixed-box">Fixed Box (z-index: 4)</div>
+    </div>
+
+    <!-- Sticky Positioning -->
+    <div class="section">
+        <h2>Sticky Positioning</h2>
+        <div class="sticky-box">Sticky Box (z-index: 5)</div>
+    </div>
+
+    <!-- Extra content to demonstrate sticky behavior -->
+    <div class="content-box">
+        Scroll down to see the sticky box in action.
+    </div>
+
+</body>
+</html>

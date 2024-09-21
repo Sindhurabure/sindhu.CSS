@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Box Model Demonstration</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            line-height: 1.6;
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: auto;
+        }
+
+        .box {
+            margin: 10px;
+            padding: 10px;
+            border: 5px solid #333;
+            background-color: #e2e2e2;
+            box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+        }
+
+        .content-box {
+            box-sizing: content-box;
+        }
+
+        .border-box {
+            box-sizing: border-box;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        .section {
+            margin-bottom: 30px;
+        }
+
+        .example {
+            margin-bottom: 20px;
+            padding: 10px;
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .example span {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .example .example-heading {
+            font-size: 1.2em;
+            font-weight: bold;
+        }
+
+        .example .example-text {
+            font-size: 1em;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>CSS Box Model Demonstration</h1>
+        
+        <div class="section">
+            <h2>Content-Box Model</h2>
+            <div class="example box content-box">
+                <span class="example-heading">Content-Box Model</span>
+                <span class="example-text">
+                    <strong>Content:</strong> The width and height only include the content. Padding, border, and margin are added to the total size of the element.
+                </span>
+                <p>This box uses the <code>box-sizing: content-box;</code> model. The total width and height of the box are calculated as:</p>
+                <ul>
+                    <li>Width = Content Width + Padding + Border + Margin</li>
+                    <li>Height = Content Height + Padding + Border + Margin</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>Border-Box Model</h2>
+            <div class="example box border-box">
+                <span class="example-heading">Border-Box Model</span>
+                <span class="example-text">
+                    <strong>Content:</strong> The width and height include the content, padding, and border. Margin is added outside the box.
+                </span>
+                <p>This box uses the <code>box-sizing: border-box;</code> model. The total width and height of the box are calculated as:</p>
+                <ul>
+                    <li>Width = Content Width (including Padding and Border) + Margin</li>
+                    <li>Height = Content Height (including Padding and Border) + Margin</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Positioning Techniques</title>
+    <style>
+     /* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    line-height: 1.5;
+}
+
+h1, h2 {
+    text-align: center;
+    color: white;
+}
+
+header, footer {
+    background-color: #333;
+    color: white;
+    padding: 1em 0;
+}
+
+main {
+    padding: 20px;
+}
+
+p {
+    padding: 10px;
+    background-color: #f4f4f4;
+    border-radius: 5px;
+}
+
+/* Fixed Header */
+.fixed-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: #222;
+}
+
+/* Fixed Footer */
+.fixed-footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #222;
+    z-index: 1000;
+}
+
+/* Static Positioning */
+.static-position {
+    position: static;
+    margin-top: 80px;
+}
+
+/* Relative Positioning */
+.relative-position {
+    position: relative;
+    top: 20px;
+    left: 20px;
+    background-color: lightblue;
+}
+
+/* Absolute Positioning */
+.absolute-position {
+    position: absolute;
+    top: 50px;
+    left: 50px;
+    width: 90%;
+    background-color: lightcoral;
+    padding: 20px;
+    z-index: 1; /* Lower than boxes in the z-index demo */
+}
+
+/* Sticky Positioning */
+.sticky-position {
+    position: -webkit-sticky; /* Safari */
+    position: sticky;
+    top: 0;
+    background-color: lightgreen;
+    padding: 10px;
+    border: 1px solid #333;
+    z-index: 500;
+}
+
+/* Z-Index Demo */
+.z-index-demo {
+    margin-top: 200px;
+    position: relative;
+    height: 300px;
+}
+
+.box {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    padding: 20px;
+    text-align: center;
+    line-height: 60px;
+    color: white;
+    font-weight: bold;
+}
+
+.box1 {
+    background-color: red;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.box2 {
+    background-color: blue;
+    top: 20px;
+    left: 20px;
+    z-index: 2; /* Stacked above box1 */
+}
+
+.box3 {
+    background-color: green;
+    top: 40px;
+    left: 40px;
+    z-index: 3; /* Stacked above box1 and box2 */
+}   
+    </style>
+</head>
+<body>
+
+    <header class="fixed-header">
+        <h1>CSS Positioning Techniques</h1>
+    </header>
+
+    <main>
+        <section class="static-position">
+            <h2>Static Positioning</h2>
+            <p>This is a statically positioned element. It appears in the normal document flow.</p>
+        </section>
+
+        <section class="relative-position">
+            <h2>Relative Positioning</h2>
+            <p>This element is positioned relative to its normal position. It has been moved 20px down and 20px right.</p>
+        </section>
+
+        <section class="absolute-position">
+            <h2>Absolute Positioning</h2>
+            <p>This element is absolutely positioned relative to its nearest positioned ancestor. It is offset by 50px from the top-left corner.</p>
+        </section>
+
+        <section class="sticky-position">
+            <h2>Sticky Positioning</h2>
+            <p>This element is sticky and will stick to the top of the page when you scroll past it.</p>
+        </section>
+
+        <section class="z-index-demo">
+            <h2>Z-Index Demonstration</h2>
+            <div class="box box1">Box 1</div>
+            <div class="box box2">Box 2</div>
+            <div class="box box3">Box 3</div>
+        </section>
+    </main>
+
+    <footer class="fixed-footer">
+        <p>This is a fixed footer. It stays at the bottom of the viewport.</p>
+    </footer>
+
+</body>
+</html>

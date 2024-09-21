@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complex CSS Grid Layout with Nested Grids</title>
+    <style>
+        /* Parent Grid Container */
+        .grid-container {
+            display: grid;
+            grid-template-rows: 100px 200px 100px; /* Three rows with different heights */
+            grid-template-columns: 1fr 2fr 1fr; /* Three columns with different fractions */
+            grid-gap: 20px; /* Gap between grid items */
+            grid-template-areas:
+                "header header header"
+                "sidebar main main"
+                "footer footer footer";
+            height: 100vh;
+            padding: 20px;
+            background-color: #f0f0f0;
+        }
+
+        /* Grid Items */
+        .header { grid-area: header; background-color: #8e44ad; }
+        .sidebar { grid-area: sidebar; background-color: #3498db; }
+        .main { grid-area: main; background-color: #2ecc71; display: grid; grid-template-columns: 1fr 1fr; grid-gap: 10px; }
+        .footer { grid-area: footer; background-color: #e74c3c; }
+
+        /* Nested Grid in Main Section */
+        .nested-grid-item {
+            background-color: #f1c40f;
+            padding: 20px;
+            color: black;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            border-radius: 5px;
+        }
+
+        /* Footer spanning multiple rows and columns */
+        .footer { grid-column: 1 / span 3; }
+
+        /* General Grid Item Styling */
+        .grid-item {
+            padding: 20px;
+            color: white;
+            font-size: 24px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="grid-container">
+        <!-- Header (spans across all columns) -->
+        <div class="grid-item header">Header</div>
+
+        <!-- Sidebar (spans two rows) -->
+        <div class="grid-item sidebar">Sidebar</div>
+
+        <!-- Main Content Area (contains a nested grid) -->
+        <div class="grid-item main">
+            <div class="nested-grid-item">Nested Item 1</div>
+            <div class="nested-grid-item">Nested Item 2</div>
+            <div class="nested-grid-item">Nested Item 3</div>
+            <div class="nested-grid-item">Nested Item 4</div>
+        </div>
+
+        <!-- Footer (spans all columns) -->
+        <div class="grid-item footer">Footer (spans across columns)</div>
+    </div>
+
+</body>
+</html>
